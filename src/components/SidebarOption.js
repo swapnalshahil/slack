@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 
 function SidebarOption({ Icon, title, id, addChannelOption }) {
-  // let history = useHistory();
   const history = useNavigate();
 
   const selectChannel = () => {
@@ -14,7 +13,7 @@ function SidebarOption({ Icon, title, id, addChannelOption }) {
       // console.log(id);
       history(`/room/${id}`);
     } else {
-      history( title);
+      history(title);
     }
   };
 

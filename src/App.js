@@ -1,18 +1,20 @@
-import { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
 import './App.css';
 import Chat from './components/Chat';
 import Header from './components/Header';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
+import { useStateValue } from './StateProvider';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="App">
       <Router>
         {!user ? (
-          <Login/>
+          <Login />
         ) : (
           <>
             {/* Header */}
@@ -22,11 +24,11 @@ function App() {
               <Sidebar />
               {/* Chat screen */}
               <Routes>
-                <Route path="/" element={""}>
-                  Welcome!
-                </Route>
                 <Route path="/room/:roomId" element={<Chat />}>
                   {/* <Chat/> */}
+                </Route>
+                <Route path="/" element={""}>
+                  Welcome!
                 </Route>
               </Routes>
             </div>

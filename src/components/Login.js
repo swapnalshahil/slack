@@ -1,8 +1,27 @@
-import { Button } from '@mui/material';
 import React from 'react'
+import { Button } from '@mui/material';
+import { auth, provider, FIREBASE } from '../firebase';
+import { actionTypes } from '../reducer';
+import { useStateValue } from '../StateProvider';
 import './Login.css';
 
+
 function Login() {
+  const [state , dispatch] = useStateValue();
+  const signIn = () => {
+    auth
+     .signInWithPopup(provider)
+     .then((result) => {
+      // console.log(result)
+      dispatch({
+        type: actionTypes.SET_USER,
+        user: result.user,
+      });
+     })
+     .catch((error) => {
+      alert(error.message);
+     });
+  }
   return (
     <div className="login">
       <div className="login_container">
@@ -11,10 +30,11 @@ function Login() {
           alt="logo"
         />
         <h1>SignIn for Slack-Clone App</h1>
-        <Button>Sign in with google</Button>
+        <p>eulersgamma group chat...</p>
+        <Button onClick={signIn}>Sign in with google</Button>
       </div>
     </div>
   );
 }
 
-export default Login
+export default Login;

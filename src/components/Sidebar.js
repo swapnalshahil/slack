@@ -14,28 +14,29 @@ import AddIcon from "@mui/icons-material/Add";
 import './Sidebar.css'
 import db from '../firebase';
 import SidebarOption from './SidebarOption';
-// import { BrowserRouter as Router,Route, Routes } from 'react-router-dom';
+import { useStateValue } from '../StateProvider';
 
 function Sidebar() {
   const [channels, setChannels] = useState([]);
+  const [{user}] = useStateValue();
   
   useEffect(() => {
-    db.collection("rooms").onSnapshot( snapshot => (
+    db.collection("rooms").onSnapshot( (snapshot) => (
       setChannels(snapshot.docs.map((doc) => ({
         id : doc.id,
         name: doc.data().name,
       })))
     ))
   }, []);
-  console.log(channels)
+  // console.log(channels)
   return (
     <div className="sidebar">
       <div className="sidebar_header">
         <div className="sidebar_info">
-          <h2>Swapnal Shahil</h2>
+          <h2>Sidebar</h2>
           <h3>
             <FiberManualRecordIcon />
-            eulersgamma
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
@@ -49,7 +50,7 @@ function Sidebar() {
       <SidebarOption Icon={FileCopyIcon} title="File Browser" />
       <SidebarOption Icon={ExpandLessIcon} title="Show Less" />
       <hr />
-      <SidebarOption Icon={ExpandMoreIcon} title="Show More" />
+      <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
       <hr />
       <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
 
