@@ -5,7 +5,7 @@ This is a static, single page React web application similar to slack.
 
 <p align="center">
   <a href="https://github.com/swapnalshahil/slack">
-    <img src="https://raw.githubusercontent.com/swapnalshahil/slack/f7621102eae5a5bc159ad42e39b0b9bd759f2234/public/slack-logo.svg?token=AN6Z3MOX7I5PYFSIIOE6EKLDVVYJ2" alt="Logo" width="300" height="300">
+    <img src="https://github.com/swapnalshahil/slack/blob/main/public/slack-logo.svg" alt="Logo" width="300" height="300">
   </a>
 </p>
 
@@ -22,7 +22,7 @@ This is a static, single page React web application similar to slack.
 
 <p align="center">
   <a href="https://github.com/swapnalshahil/slack">
-    <img src="https://raw.githubusercontent.com/swapnalshahil/slack/main/public/github_firebase_react.webp?token=GHSAT0AAAAAAB4MLR2NBEMF6QRMCO2MLYOWY5NPYRA" alt="">
+    <img src="https://github.com/swapnalshahil/slack/blob/main/public/github_firebase_react.webp" alt="">
   </a>
 </p>
 
