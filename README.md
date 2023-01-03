@@ -16,7 +16,9 @@ This is a static, single page React web application similar to slack.
 - Used React Context API to access data globally (for ease).
 - There is a channel section which includes all the existing channels.
 - We can add more channels for any specific new topic.
+- Hosted through firebase.
 - Technology used: React, Firebase -> (Firestore and Auth), React-Router and MaterialUI.
+
 
 
 
